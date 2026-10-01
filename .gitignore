@@ -1,0 +1,8 @@
+# Site-specific job folders hold real configs (tenant IDs, possibly secrets). Never publish.
+Jobs/
+# Any real config, anywhere
+config.yaml
+# Runtime logs
+*.log
+# macOS cruft
+.DS_Store

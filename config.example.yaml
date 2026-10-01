@@ -1,0 +1,21 @@
+# accountedge_graph_mailer — config template
+# Copy this to config.yaml (or pass it to install.sh --config) and fill it in.
+# Flat "key: value" lines only. NEVER commit a real secret.
+
+# --- Microsoft Entra app registration (one per Microsoft 365 tenant) ---
+tenant_id: "YOUR_TENANT_ID"          # Directory (tenant) ID, from the app's Overview page
+client_id: "YOUR_APP_CLIENT_ID"      # Application (client) ID, from the app's Overview page
+
+# The client secret: preferred home is the macOS Keychain (see README, "Store the secret").
+# Leave client_secret blank and name the Keychain item in keychain_item.
+client_secret: ""                    # only if you are NOT using the Keychain
+keychain_item: "aegm-yourorg"        # Keychain item name holding the secret
+
+# --- identity ---
+sender: "billing@yourdomain.com"     # mailbox the emails are sent AS (must be allowed by the Application Access Policy)
+alert_to: "admin@yourdomain.com"     # admin contact for failures (reserved; failures currently show an on-screen dialog)
+
+# --- paths (defaults shown; normally leave as-is) ---
+officelink_data: "~/Library/Application Support/OfficeLink/OfficeLink Data"
+original_applet: "~/Library/Application Support/OfficeLink/OfficeLink Processor (original).app"  # handles non-email jobs
+log_path: "~/Library/Logs/accountedge_graph_mailer.log"
